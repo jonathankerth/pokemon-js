@@ -10,3 +10,11 @@ for (let i = 0; i < pokemonList.length; i++) {
 		document.write("Wow! That's big!");
 	}
 }
+function div(dividend, divisor) {
+	if (divisor === 0) {
+		return "You’re trying to divide by zero.";
+	} else {
+		let result = dividend / divisor;
+		return result;
+	}
+}
