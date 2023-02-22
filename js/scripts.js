@@ -65,7 +65,7 @@ let pokemonRepository = (function () {
 
 	function showDetails(item) {
 		loadDetails(item).then(function () {
-			showModal(item.name, item.height);
+			showModal(item.name, item.height, item.imageUrl);
 		});
 	}
 
@@ -103,23 +103,6 @@ let pokemonRepository = (function () {
 		let modalContainer = document.querySelector("#modal-container");
 		modalContainer.classList.remove("is-visible");
 	}
-
-	return {
-		add: add,
-		getAll: getAll,
-		addListItem: addListItem,
-		loadList: loadList,
-		loadDetails: loadDetails,
-		showDetails: showDetails,
-	};
-})();
-
-pokemonRepository.loadList().then(function () {
-	pokemonRepository.getAll().forEach(function (pokemon) {
-		pokemonRepository.addListItem(pokemon);
-	});
-});
-(function () {
 	let modalContainer = document.querySelector("#modal-container");
 	let dialogPromiseReject; // This can be set later, by showDialog
 	function showDialog(title, text) {
@@ -154,16 +137,6 @@ pokemonRepository.loadList().then(function () {
 			dialogPromiseReject = reject;
 		});
 	}
-	document.querySelector("#show-dialog").addEventListener("click", () => {
-		showDialog("Confirm action", "Are you sure you want to do this?").then(
-			function () {
-				alert("confirmed!");
-			},
-			() => {
-				alert("not confirmed");
-			}
-		);
-	});
 
 	window.addEventListener("keydown", (e) => {
 		if (
@@ -182,4 +155,19 @@ pokemonRepository.loadList().then(function () {
 			hideModal();
 		}
 	});
+
+	return {
+		add: add,
+		getAll: getAll,
+		addListItem: addListItem,
+		loadList: loadList,
+		loadDetails: loadDetails,
+		showDetails: showDetails,
+	};
 })();
+
+pokemonRepository.loadList().then(function () {
+	pokemonRepository.getAll().forEach(function (pokemon) {
+		pokemonRepository.addListItem(pokemon);
+	});
+});
