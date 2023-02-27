@@ -20,6 +20,7 @@ let pokemonRepository = (function () {
 		let button = document.createElement("button");
 		button.innerText = pokemon.name;
 		button.classList.add("button-class");
+		button.classList.add("btn", "btn-primary"); 
 		listpokemon.appendChild(button);
 		pokemonList.appendChild(listpokemon);
 		button.addEventListener("click", function (event) {
@@ -40,6 +41,10 @@ let pokemonRepository = (function () {
 					};
 					add(pokemon);
 					console.log(pokemon);
+
+					const button = document.createElement('button');
+					button.classList.add('btn', 'btn-primary');
+					button.textContent = 'Select';
 				});
 			})
 			.catch(function (e) {
