@@ -1,6 +1,6 @@
-let pokemonRepository = (function () {
-  let pokemonList = [];
-  let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
+const pokemonRepository = (function () {
+  const pokemonList = [];
+  const apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
 
   function add(pokemon) {
     if (typeof pokemon === "object" && "name" in pokemon) {
@@ -15,9 +15,8 @@ let pokemonRepository = (function () {
   }
 
   function addListItem(pokemon) {
-    let pokemonList = document.querySelector(".pokemon-list");
-
-    let button = document.createElement("button");
+    const pokemonList = document.querySelector(".pokemon-list");
+    const button = document.createElement("button");
     button.innerText = pokemon.name;
     button.classList.add("button-class");
     button.classList.add("btn", "btn-primary");
@@ -27,7 +26,7 @@ let pokemonRepository = (function () {
       showDetails(pokemon);
     });
 
-    let listpokemon = document.createElement("li");
+    const listpokemon = document.createElement("li");
     listpokemon.classList.add("group-list-item");
     listpokemon.appendChild(button);
     pokemonList.appendChild(listpokemon);
@@ -40,7 +39,7 @@ let pokemonRepository = (function () {
       })
       .then(function (json) {
         json.results.forEach(function (item) {
-          let pokemon = {
+          const pokemon = {
             name: item.name,
             detailsUrl: item.url,
           };
@@ -57,7 +56,7 @@ let pokemonRepository = (function () {
   }
 
   function loadDetails(item) {
-    let url = item.detailsUrl;
+    const url = item.detailsUrl;
     return fetch(url)
       .then(function (response) {
         return response.json();
@@ -79,16 +78,16 @@ let pokemonRepository = (function () {
   }
 
   function showModal(pokemon) {
-    let titleElement = document.querySelector("#modalContainer .modal-title");
+    const titleElement = document.querySelector("#modalContainer .modal-title");
     titleElement.innerText = pokemon.name;
 
-    let bodyElement = document.querySelector("#modalContainer .modal-body");
+    const bodyElement = document.querySelector("#modalContainer .modal-body");
     bodyElement.innerHTML = "";
 
-    let imageElement = document.createElement("img");
+    const imageElement = document.createElement("img");
     imageElement.src = pokemon.imageUrl;
 
-    let heightElement = document.createElement("p");
+    const heightElement = document.createElement("p");
     heightElement.innerText = `Height: ${pokemon.height}`;
 
     bodyElement.appendChild(imageElement);
@@ -111,7 +110,7 @@ pokemonRepository.loadList().then(function () {
   });
 });
 // Get the button:
-let mybutton = document.getElementById("topButton");
+const mybutton = document.getElementById("topButton");
 
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
