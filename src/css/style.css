@@ -1,5 +1,5 @@
 body {
-	display: block;
+	display: flex;
 }
 .button-class {
 	background-color: #4caf50; /* Green */
@@ -8,7 +8,7 @@ body {
 	padding: 16px 32px;
 	text-align: center;
 	text-decoration: none;
-	display: inline-block;
+	display: flex;
 	font-size: 16px;
 	margin: 4px 2px;
 	-webkit-transition-duration: 0.4s; /* Safari */
@@ -38,18 +38,4 @@ body {
   #topButton:hover {
 	background-color: #555; /* Add a dark-grey background on hover */
   }
-
-  .container {
-	display: flex;
-	justify-content:center;
-	align-items: center;
-	flex-wrap: wrap;
-  }
-
-
- .list-group.pokemon-list li {
-	display: flex;
-	justify-content:center;
-	align-items: center;
-	flex-wrap: wrap;
- }
+  
