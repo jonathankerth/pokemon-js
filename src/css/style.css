@@ -38,3 +38,18 @@ body {
   #topButton:hover {
 	background-color: #555; /* Add a dark-grey background on hover */
   }
+
+  .container {
+	display: flex;
+	justify-content:center;
+	align-items: center;
+	flex-wrap: wrap;
+  }
+
+
+ .list-group.pokemon-list li {
+	display: flex;
+	justify-content:center;
+	align-items: center;
+	flex-wrap: wrap;
+ }
