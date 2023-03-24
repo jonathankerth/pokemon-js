@@ -1,5 +1,6 @@
 body {
 	display: flex;
+	background-color: #FB1B1B;
 }
 .button-class {
 	background-color: #4caf50; /* Green */
@@ -14,9 +15,9 @@ body {
 	-webkit-transition-duration: 0.4s; /* Safari */
 	transition-duration: 0.4s;
 	cursor: pointer;
-	background-color: white;
+	background-color: #FFCC00;
 	color: black;
-	border: 2px solid #4caf50;
+	border: 2px solid #0075BE;
 	margin-top: 60px;
 }
 #topButton {
@@ -37,5 +38,25 @@ body {
   
   #topButton:hover {
 	background-color: #555; /* Add a dark-grey background on hover */
+  }
+
+  #topNav {
+	background-color: #dfdfdf;
+  }
+  
+  #topNav .navbar-brand {
+	color: #000;
+  }
+  
+  #topNav .navbar-nav .nav-item a {
+	color: #000;
+  }
+  
+  #topNav .navbar-nav .nav-item a:hover {
+	color: #007bff;
+  }
+  
+  #topNav .navbar-nav .nav-item.active a {
+	color: #007bff;
   }
   
